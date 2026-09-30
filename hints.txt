@@ -1,0 +1,15 @@
+# Deutschen Tastaturtreiber für ganzen Desktop
+setxkbmap de
+
+# sympy installieren
+sudo sed -i 's/^deb cdrom:/# deb cdrom:/g' /etc/apt/sources.list
+sudo apt update && sudo apt install -y python3-sympy
+
+# homebrew und damit msieve
+sudo apt update && sudo apt install -y build-essential curl git file procps
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> ~/.bashrc
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+brew --version
+brew install msieve
+
